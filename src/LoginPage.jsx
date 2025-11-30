@@ -68,7 +68,7 @@ function LoginPage() {
             Sign In
           </button>
           <p>
-            Belum punya akun? <a href="#">Daftar disini</a>
+            <span>Belum punya akun?</span>  <a href="#">Daftar disini</a>
           </p>
         </div>
       </div>
