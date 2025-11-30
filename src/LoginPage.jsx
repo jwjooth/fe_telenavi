@@ -12,7 +12,7 @@ function LoginPage() {
     // cek kalo email kosong
     if (!email) {
       newError.email = "email tidak boleh kosong";
-    } else if (email.match("@gmail.com")) {
+    } else if (!email.match("@gmail.com")) {
       newError.email = "format email tidak valid";
     }
 
@@ -32,12 +32,14 @@ function LoginPage() {
     if (email.match("@gmail.com") != false && password.length >= 6) {
       localStorage.setItem("email", email);
       localStorage.setItem("loginAt", Date.now().toString());
-      alert("Login Berhasil!");
+      alert("Login Berhasil");
       setEmail("");
       setPassword("");
     } else {
       alert("Login Gagal");
     }
+
+    // akan menghapus pesan setelah 3 detik
 
     // mencegah refresh default browser
     event.preventDefault();
@@ -68,7 +70,7 @@ function LoginPage() {
             Sign In
           </button>
           <p>
-            <span>Belum punya akun?</span>  <a href="#">Daftar disini</a>
+            <span>Belum punya akun?</span> <a href="#">Daftar disini</a>
           </p>
         </div>
       </div>
